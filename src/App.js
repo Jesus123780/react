@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import './App.css'
+import { Text } from './Text'
+/**
+ * Función que renderiza un array de componentes Text
+ * @returns renderiza un array de componentes Text 
+ */
 function App() {
+  // Array de números
+  const arrayNumers = [1, 2, 3, 4, 5]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Renderiza un array de componentes Text */}
+      {arrayNumers.map(function(number) {
+        return <Text nombre='Juan' key={number} />
+      })}
     </div>
-  );
+  )
 }
-
-export default App;
+// exporta la función App
+export default App
